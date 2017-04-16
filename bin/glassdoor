@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/glassdoor_scraper'
+
+GlassdoorJobs::CLI.new.call
