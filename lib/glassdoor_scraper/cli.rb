@@ -1,9 +1,8 @@
 class GlassdoorJobs::CLI
   def call
     #Welcome
-    GlassdoorJobs::Scraper.get_page
     puts "Hi there! Let's learn about Software Engineering jobs openings in NYC!"
-    #list jobs
+    GlassdoorJobs::Scraper.get_page
     GlassdoorJobs::Scraper.create_jobs
     start
   end
@@ -12,8 +11,7 @@ class GlassdoorJobs::CLI
     display_jobs
     puts "Which job would you like to learn more about?"
     input = gets.strip
-    #drilldown?
-
+    
     if input.to_i > 0
       #list job details
       GlassdoorJobs::Job.all[input.to_i - 1].get_job_details

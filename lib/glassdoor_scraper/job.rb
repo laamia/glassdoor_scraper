@@ -1,5 +1,6 @@
 class GlassdoorJobs::Job
-  attr_accessor :role, :company, :salary, :url, :company_url, :company_size, :company_revenue, :company_rating, :company_headquarters
+  attr_accessor :role, :company, :salary, :url, :company_url, :company_size,
+  :company_revenue, :company_rating, :company_headquarters
   @@all = []
 
   def initialize(role, company, salary, url)
