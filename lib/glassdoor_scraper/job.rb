@@ -20,7 +20,6 @@ class GlassdoorJobs::Job
     company_page = Nokogiri::HTML(open(self.company_url))
 
     @company_rating = company_page.css("div.ratingNum").text
-
     other_details = {}
     company_page.css("div.info.flexbox.row.col-hh div.infoEntity").each do |text|
       other_details[text.css("label").text] = text.css("span.value").text

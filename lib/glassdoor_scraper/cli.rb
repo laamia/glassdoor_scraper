@@ -2,9 +2,8 @@ class GlassdoorJobs::CLI
   def call
     #Welcome
     GlassdoorJobs::Scraper.get_page
-    puts "Hi there! Let's learn about Software Engineering jobs openings in NYC!"
-    #list jobs
     GlassdoorJobs::Scraper.create_jobs
+    puts "Hi there! Let's learn about Software Engineering jobs openings in NYC!"
     start
   end
 

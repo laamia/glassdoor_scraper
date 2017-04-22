@@ -1,6 +1,5 @@
 class GlassdoorJobs::Scraper
-  #@glassdoor_url = 'https://www.glassdoor.com/Salaries/new-york-city-software-engineer-salary-SRCH_IL.0,13_IM615_KO14,31.htm'
-
+  
   def self.get_page
     Nokogiri::HTML(open('https://www.glassdoor.com/Salaries/new-york-city-software-engineer-salary-SRCH_IL.0,13_IM615_KO14,31.htm'))
   end
