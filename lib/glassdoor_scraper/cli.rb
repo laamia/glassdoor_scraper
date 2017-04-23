@@ -1,8 +1,8 @@
 class GlassdoorJobs::CLI
   def call
     #Welcome
-    GlassdoorJobs::Scraper.get_page
-    GlassdoorJobs::Scraper.create_jobs
+    GlassdoorJobs::Scraper.get_page('https://www.glassdoor.com/Salaries/new-york-city-software-engineer-salary-SRCH_IL.0,13_IM615_KO14,31.htm')
+    GlassdoorJobs::Scraper.create_jobs('https://www.glassdoor.com/Salaries/new-york-city-software-engineer-salary-SRCH_IL.0,13_IM615_KO14,31.htm')
     puts "Hi there! Let's learn about Software Engineering jobs openings in NYC!"
     start
   end
@@ -15,7 +15,9 @@ class GlassdoorJobs::CLI
 
     if input.to_i > 0
       #list job details
-      GlassdoorJobs::Job.all[input.to_i - 1].get_job_details
+      #GlassdoorJobs::Job.all[input.to_i - 1].get_job_details
+      company_name = GlassdoorJobs::Job.all[input.to_i - 1].company
+      GlassdoorJobs::Scraper.get_job_details(company_name)
       display_job_details(input.to_i - 1)
       puts "Want to try again? (y/n)"
       input = gets.strip.downcase
