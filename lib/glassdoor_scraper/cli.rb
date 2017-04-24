@@ -12,7 +12,6 @@ class GlassdoorJobs::CLI
     puts "Which job would you like to learn more about?"
     input = gets.strip
     #drilldown?
-
     if input.to_i > 0
       #list job details
       #GlassdoorJobs::Job.all[input.to_i - 1].get_job_details
